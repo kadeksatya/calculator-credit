@@ -110,22 +110,13 @@ $(document).ready(function () {
   // Check Result
   $(".submitForm").click(function (e) {
 
-    let sub_total = 0
-    let who_is = $('.who_is_input').val();
-    let total = 0
     let suku_bunga = 0
-    let tota_bunga = 0
     let pajak = 0.2
-    let angsuran = 0
-    let product = $('.product').find(":selected").val();
     let suku_bunga_deposite = $('.time_period_deposite').find(":selected").val();
     let jangka_waktu_deposite = $('.time_period_deposite').find(':selected').attr('data-time')
-    let jangka_waktu_credit = $('.time_period_credit').find(":selected").val();
     let amount = $('.amount').val();
     let amount_converted = amount.replace(/,/g, '');
-    let hasil_credit = $('.hasil_credit');
     let hasil_deposito_1 = $('.hasil_deposito_1');
-    let hasil_deposito_1_bunga = $('.hasil_deposito_1_bunga');
     let hasil_deposito_2 = $('.hasil_deposito_2');
     let hasil_deposito_3 = $('.hasil_deposito_3');
 
