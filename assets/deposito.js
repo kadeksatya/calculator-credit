@@ -1,21 +1,4 @@
-// Reset Forms 
 
-
-
-
-// Check Result
-$(".submitForm").click(function (e) {
-  if (!$('.product').val()) {
-    alert("Minimal Pilih 1 product");
-  } else if ($('.amount').val() == 0) {
-    alert("Minimal Nominal masih 0");
-  } else {
-    $(".form-input").addClass('d-none');
-    $(".form-result").removeClass('d-none');
-  }
-
-
-});
 
 // Back To Form Input
 $(".aturUlang").click(function (e) {
@@ -39,10 +22,9 @@ $(document).on('input', '#rangeamount', function () {
 $(document).ready(function () {
   $(".resetForm").click(function (e) {
     jQuery('.amount').val('0');
-    jQuery('.product').val('').trigger('change');
-    jQuery('.time_period_credit').val('').trigger('change');
     jQuery('.time_period_deposito').val('').trigger('change');
-    jQuery('.amount_depo').val(0)
+    jQuery('.amount_depo').val('0')
+    jQuery('.suku_bunga').val('0')
     for (let e of document.querySelectorAll('input[type="range"].slider-progress')) {
       e.style.setProperty('--value', e.value);
       e.style.setProperty('--min', e.min == '' ? '0' : e.min);
@@ -72,37 +54,13 @@ $(document).ready(function () {
 
   // Ganti Suku Bunga Deposite
 
-  $('.time_period_deposite').change(function (e) {
+  $('.time_period_deposito').change(function (e) {
     let suku_bunga = $(this).val();
     suku_bunga_result.text(suku_bunga);
 
   });
 
   // Ganti Suku Bunga Pajak
-
-  $('.time_period_credit').change(function (e) {
-    let product = $('.product').find(":selected").val();
-    let jangka_waktu = $(this).val();
-    let who_is = $('.who_is_input').val();
-    let suku_bunga = 0
-    let result = 0;
-
-    if (product == 'KREDIT_SERTIFIKASI') {
-      if(who_is == 'PNS'){
-        suku_bunga = 1.25;
-      }else{
-        suku_bunga = 1.4;
-
-      }
-    }else{
-      suku_bunga = 1.5;
-    }
-
-    result = jangka_waktu * suku_bunga;
-
-    suku_bunga_result.text(result.toFixed(2));
-
-  });
 
 
   // Function hitung data angsuran
