@@ -89,7 +89,6 @@ $(document).ready(function () {
     let hasil_credit = $('.hasil_credit');
 
     console.log(amount_converted);
-    console.log(jangka_waktu_deposite);
 
       if(who_is == 'PNS'){
         suku_bunga = 1.25;
