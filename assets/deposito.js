@@ -68,10 +68,9 @@ $(document).ready(function () {
   // Check Result
   $(".submitForm").click(function (e) {
 
-    let suku_bunga = 0
     let pajak = 0.2
-    let suku_bunga_deposite = $('.time_period_deposite').find(":selected").val();
-    let jangka_waktu_deposite = $('.time_period_deposite').find(':selected').attr('data-time')
+    let suku_bunga_deposite = $('.time_period_deposito').find(":selected").val();
+    let jangka_waktu_deposite = $('.time_period_deposito').find(':selected').attr('data-time')
     let amount = $('.amount').val();
     let amount_converted = amount.replace(/,/g, '');
     let hasil_deposito_1 = $('.hasil_deposito_1');
@@ -79,11 +78,6 @@ $(document).ready(function () {
     let hasil_deposito_3 = $('.hasil_deposito_3');
 
     console.log(amount_converted);
-    console.log(jangka_waktu_deposite);
-
-    if (!$('.product').val()) {
-      alert("Minimal Pilih 1 product");
-    }
 
 
 
@@ -99,7 +93,6 @@ $(document).ready(function () {
       hasil_deposito_3.text(total_bunga_semua.toLocaleString());
 
       $(".form-input").addClass('d-none');
-      $(".form-result").addClass('d-none');
       $(".form-result-deposite").removeClass('d-none');
    
 
